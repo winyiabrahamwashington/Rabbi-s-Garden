@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms and Conditions for Rabbi's Garden ministry and resources">
+  <title>Terms and Conditions - Rabbi's Garden</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-green: #1e8449;
+      --dark-green: #145a32;
+      --light-green: #58d68d;
+      --gold-accent: #f1c40f;
+      --pure-white: #ffffff;
+      --off-white: #f8f9fa;
+      --dark-bg: #1a1a1a;
+      --text-dark: #333333;
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--pure-white);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      font-size: 0.95rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light-green);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--light-green);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 12px rgba(30, 132, 73, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: var(--light-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(88, 214, 141, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--pure-white);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--primary-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.active {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-green);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover:after,
+    .nav-links a.active:after {
+      width: 100%;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    .hamburger:hover {
+      transform: rotate(90deg);
+    }
+
+    /* Header Section */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://i.pinimg.com/736x/a1/d0/5b/a1d05b15a6b04b6f7d7e791f34f71a45.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 60vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      max-width: 700px;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease-out;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 20px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+    }
+
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    header p {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      margin: 30px 0;
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* Terms Section */
+    .terms-section {
+      background-color: var(--off-white);
+      padding: 60px 0;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    .terms-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: var(--pure-white);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    }
+
+    .terms-group {
+      margin-bottom: 35px;
+    }
+
+    .terms-group h3 {
+      color: var(--primary-green);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--light-green);
+    }
+
+    .terms-group p {
+      margin-bottom: 15px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .terms-group ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    .terms-group li {
+      margin-bottom: 10px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background-color: rgba(88, 214, 141, 0.1);
+      padding: 15px;
+      border-left: 4px solid var(--light-green);
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      text-align: center;
+      margin-top: 40px;
+      padding: 30px;
+      background-color: var(--primary-green);
+      border-radius: 12px;
+      color: white;
+    }
+
+    .contact-cta h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .contact-cta p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact-cta .btn {
+      background-color: white;
+      color: var(--primary-green);
+    }
+
+    .contact-cta .btn:hover {
+      background-color: var(--gold-accent);
+      color: var(--text-dark);
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      background-color: var(--primary-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .scroll-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--light-green);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-logo-img {
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--pure-white);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.2rem;
+      color: #aaa;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+      color: var(--pure-white);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-links h3:after, .footer-social h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-green);
+      transform: translateX(4px);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--light-green);
+      border: 2px solid var(--light-green);
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--light-green);
+      color: var(--dark-bg);
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--light-green);
+      font-weight: 600;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-container {
+        padding: 0.8rem;
+      }
+      
+      .section-title::after,
+      header h1::after {
+        width: 50px;
+        height: 3px;
+        bottom: -10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--pure-white);
+        flex-direction: column;
+        padding: 1.2rem 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.7rem 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      header {
+        height: 50vh;
+        min-height: 350px;
+      }
+      
+      .terms-container {
+        padding: 30px 20px;
+      }
+      
+      .contact-cta {
+        padding: 25px 20px;
+      }
+      
+      .scroll-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-container {
+        padding: 0.7rem;
+      }
+      
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .logo-img {
+        height: 35px;
+        margin-right: 8px;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .terms-group h3 {
+        font-size: 1.2rem;
+      }
+      
+      header h1::after {
+        width: 40px;
+        height: 2px;
+        bottom: -8px;
+      }
+      
+      .footer-logo-img {
+        height: 30px;
+      }
+      
+      .footer-logo-text {
+        font-size: 1.3rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .logo-img {
+        height: 30px;
+      }
+      
+      .terms-group h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container container">
+      <a href="index.html" class="logo">
+        <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="logo-img">
+        <span>Rabbi's Garden</span>
+      </a>
+      <div class="hamburger">☰</div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Terms and Conditions</h1>
+      <p>Please read these terms carefully before using Rabbi's Garden ministry resources and services.</p>
+    </div>
+  </header>
+
+  <!-- Terms Section -->
+  <section class="terms-section">
+    <div class="container">
+      <div class="terms-container">
+        <div class="terms-group">
+          <h3>1. Acceptance of Terms</h3>
+          <p>By accessing or using Rabbi's Garden ("the Ministry", "we", "us", or "our") websites, services, content, or products (collectively "Services"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to all these Terms, you may not use our Services.</p>
+          
+          <div class="highlight">
+            <p><strong>These Terms constitute a legally binding agreement between you and Rabbi's Garden regarding your use of our Services. We may modify these Terms at any time, and such modifications shall be effective immediately upon posting.</strong></p>
+          </div>
+        </div>
+        
+        <div class="terms-group">
+          <h3>2. Description of Services</h3>
+          <p>Rabbi's Garden provides:</p>
+          <ul>
+            <li>Biblical teaching resources (videos, articles, study materials)</li>
+            <li>Online community features</li>
+            <li>Digital and physical products through our shop</li>
+            <li>Donation processing for ministry support</li>
+            <li>Event registration and participation</li>
+          </ul>
+          <p>All Services are provided for educational and spiritual growth purposes only. We reserve the right to modify or discontinue any Service at any time without notice.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>3. User Accounts and Responsibilities</h3>
+          <p>Certain Services may require account creation. When creating an account, you agree to:</p>
+          <ul>
+            <li>Provide accurate, current, and complete information</li>
+            <li>Maintain the security of your password and accept all risks of unauthorized access</li>
+            <li>Notify us immediately of any unauthorized use of your account</li>
+            <li>Be responsible for all activities that occur under your account</li>
+          </ul>
+          <p>We may suspend or terminate accounts that violate these Terms or are used for any fraudulent or inappropriate purpose.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>4. Intellectual Property Rights</h3>
+          <p>All content provided through our Services, including but not limited to text, graphics, logos, images, audio clips, video, data, software, and other materials (collectively "Content") is owned by Rabbi's Garden or its content suppliers and protected by international copyright laws.</p>
+          
+          <div class="highlight">
+            <p><strong>Permitted Use:</strong> You may access and use the Content for personal, non-commercial use only. You may share links to our content and make limited printed copies for personal study or small group use, provided all copyright notices remain intact.</p>
+            <p><strong>Prohibited Use:</strong> You may not reproduce, distribute, modify, create derivative works of, publicly display, or commercially exploit any Content without express written permission from Rabbi's Garden.</p>
+          </div>
+        </div>
+        
+        <div class="terms-group">
+          <h3>5. User Conduct and Prohibited Activities</h3>
+          <p>You agree not to use our Services to:</p>
+          <ul>
+            <li>Upload or transmit any unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or otherwise objectionable content</li>
+            <li>Impersonate any person or entity or falsely state your affiliation with any person or entity</li>
+            <li>Interfere with or disrupt the Services or servers/networks connected to the Services</li>
+            <li>Attempt to gain unauthorized access to any portion of the Services or any other systems/networks</li>
+            <li>Use any automated means to access the Services or collect any information from them</li>
+            <li>Engage in any commercial activities without our prior written consent</li>
+          </ul>
+        </div>
+        
+        <div class="terms-group">
+          <h3>6. Donations and Purchases</h3>
+          <p><strong>Donations:</strong> All donations to Rabbi's Garden are voluntary and non-refundable. We appreciate your support of our ministry.</p>
+          <p><strong>Product Purchases:</strong> All sales of physical or digital products through our shop are subject to the following:</p>
+          <ul>
+            <li>Prices are listed in US Dollars unless otherwise noted</li>
+            <li>We reserve the right to change prices at any time</li>
+            <li>Digital products may be subject to license terms specified at purchase</li>
+            <li>Physical products are subject to shipping terms and applicable fees</li>
+          </ul>
+          
+          <div class="highlight">
+            <p><strong>Refund Policy:</strong> Due to the digital nature of most products, we generally do not offer refunds unless required by law. For defective physical products, please contact us within 14 days of receipt to arrange for replacement or refund.</p>
+          </div>
+        </div>
+        
+        <div class="terms-group">
+          <h3>7. Privacy Policy</h3>
+          <p>Your privacy is important to us. Our <a href="privacy.html">Privacy Policy</a> explains how we collect, use, and protect your personal information. By using our Services, you consent to our collection and use of personal data as outlined in the Privacy Policy.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>8. Disclaimers and Limitation of Liability</h3>
+          <p><strong>No Warranty:</strong> Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the Services will be uninterrupted, error-free, or free from viruses or other harmful components.</p>
+          <p><strong>Spiritual Content:</strong> While we strive for biblical accuracy, our teachings represent our understanding of Scripture and should not replace personal study and discernment.</p>
+          <p><strong>Limitation of Liability:</strong> To the fullest extent permitted by law, Rabbi's Garden shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the Services.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>9. Third-Party Links and Services</h3>
+          <p>Our Services may contain links to third-party websites or services that are not owned or controlled by Rabbi's Garden. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites or services.</p>
+          <p>You acknowledge and agree that Rabbi's Garden shall not be responsible or liable for any damage or loss caused by or in connection with use of any such third-party content, goods, or services.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>10. Termination</h3>
+          <p>We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms.</p>
+          <p>Upon termination, your right to use the Services will immediately cease. All provisions of these Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>11. Governing Law and Dispute Resolution</h3>
+          <p>These Terms shall be governed by and construed in accordance with the laws of Uganda, without regard to its conflict of law provisions.</p>
+          <p>Any dispute arising from these Terms shall be resolved through good faith negotiations between the parties. If such negotiations fail, the dispute shall be submitted to mediation in Kampala, Uganda before resorting to arbitration or litigation.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>12. General Provisions</h3>
+          <p><strong>Entire Agreement:</strong> These Terms constitute the entire agreement between you and Rabbi's Garden regarding the Services and supersede all prior agreements.</p>
+          <p><strong>Severability:</strong> If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.</p>
+          <p><strong>Waiver:</strong> Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+          <p><strong>Assignment:</strong> You may not assign or transfer these Terms without our prior written consent. We may assign our rights without restriction.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>13. Changes to These Terms</h3>
+          <p>We reserve the right to modify or replace these Terms at any time. We will provide notice of significant changes through our website or by email. Your continued use of the Services after any changes constitutes acceptance of the new Terms.</p>
+        </div>
+        
+        <div class="terms-group">
+          <h3>14. Contact Information</h3>
+          <p>If you have any questions about these Terms, please contact us at:</p>
+          <p><strong>Email:</strong> therabbisgarden@gmail.com<br>
+          <strong>Phone:</strong> +(256) 744 611 012<br>
+          <strong>Address:</strong> Rabbi's Garden, Kampala, Uganda</p>
+        </div>
+        
+        <div class="contact-cta">
+          <h3>Need Further Clarification?</h3>
+          <p>If you have any questions about our Terms and Conditions, don't hesitate to reach out to our team.</p>
+          <a href="contacts.html" class="btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo-container">
+            <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="footer-logo-img">
+            <span class="footer-logo-text">Rabbi's Garden</span>
+          </div>
+          <p>A community-based initiative dedicated to sharing the transformative power of the Bible with the world.</p>
+          <p>Join Us in Spreading the Word: Become a Part of Our Bible Community!</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/rabbisgarden/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rabbis.garden" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@mikewuertemburg2204" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p style="margin-top: 1.2rem; color: #aaa;">Follow our journey and see the impact of your support.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Rabbi's Garden. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+      } else {
+        nav.style.boxShadow = '0 3px 15px rgba(0,0,0,0.08)';
+      }
+    });
+    
+    // Set active navigation link
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (currentPage === linkPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('nav-menu').classList.remove('show');
+      });
+    });
+    
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('active');
+      } else {
+        scrollToTopBtn.classList.remove('active');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

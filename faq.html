@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently asked questions about Rabbi's Garden ministry and resources">
+  <title>FAQ - Rabbi's Garden</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-green: #1e8449;
+      --dark-green: #145a32;
+      --light-green: #58d68d;
+      --gold-accent: #f1c40f;
+      --pure-white: #ffffff;
+      --off-white: #f8f9fa;
+      --dark-bg: #1a1a1a;
+      --text-dark: #333333;
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--pure-white);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      font-size: 0.95rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light-green);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--light-green);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 12px rgba(30, 132, 73, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: var(--light-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(88, 214, 141, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--pure-white);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--primary-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.active {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-green);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover:after,
+    .nav-links a.active:after {
+      width: 100%;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    .hamburger:hover {
+      transform: rotate(90deg);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      background-color: var(--off-white);
+      padding: 60px 0;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-category {
+      margin-bottom: 40px;
+    }
+
+    .faq-category h3 {
+      color: var(--primary-green);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--light-green);
+    }
+
+    .faq-item {
+      background-color: var(--pure-white);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-question {
+      padding: 15px 20px;
+      background-color: var(--pure-white);
+      color: var(--primary-green);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background-color: #f0f0f0;
+    }
+
+    .faq-question i {
+      transition: var(--transition);
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 20px 20px;
+      max-height: 1000px;
+    }
+
+    .faq-answer p {
+      color: #555;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .faq-answer ul, .faq-answer ol {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    .faq-answer li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      text-align: center;
+      margin-top: 40px;
+      padding: 30px;
+      background-color: var(--primary-green);
+      border-radius: 12px;
+      color: white;
+    }
+
+    .contact-cta h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .contact-cta p {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .contact-cta .btn {
+      background-color: white;
+      color: var(--primary-green);
+    }
+
+    .contact-cta .btn:hover {
+      background-color: var(--gold-accent);
+      color: var(--text-dark);
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      background-color: var(--primary-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .scroll-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--light-green);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-logo-img {
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--pure-white);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.2rem;
+      color: #aaa;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+      color: var(--pure-white);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-links h3:after, .footer-social h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-green);
+      transform: translateX(4px);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--light-green);
+      border: 2px solid var(--light-green);
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--light-green);
+      color: var(--dark-bg);
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--light-green);
+      font-weight: 600;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-container {
+        padding: 0.8rem;
+      }
+      
+      .section-title::after {
+        width: 50px;
+        height: 3px;
+        bottom: -10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--pure-white);
+        flex-direction: column;
+        padding: 1.2rem 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.7rem 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      .scroll-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .faq-question {
+        padding: 15px;
+      }
+      
+      .contact-cta {
+        padding: 25px 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-container {
+        padding: 0.7rem;
+      }
+      
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .logo-img {
+        height: 35px;
+        margin-right: 8px;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .social-icons {
+        justify-content: center;
+      }
+      
+      .footer-links h3:after, 
+      .footer-social h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .logo-img {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container container">
+      <a href="index.html" class="logo">
+        <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="logo-img">
+        <span>Rabbi's Garden</span>
+      </a>
+      <div class="hamburger">☰</div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-container">
+        <!-- About Rabbi's Garden -->
+        <div class="faq-category">
+          <h3>About Rabbi's Garden</h3>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What is Rabbi's Garden?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Rabbi's Garden is a Christian ministry dedicated to teaching the Scriptures from a Hebraic perspective, focusing on the language, culture, and context of the Bible. Our mission is to help believers deepen their relationship with Yeshua (Jesus) and expand the Kingdom of YHWH on earth.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Who founded Rabbi's Garden?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Rabbi's Garden was founded by Mike Wuertemburg, along with his wife Edith Wuertemburg. Mike is also the founder and President of Equip Ministries.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What makes Rabbi's Garden different from other ministries?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Rabbi's Garden emphasizes:</p>
+              <ul>
+                <li>Teaching Scripture from its original Hebrew context</li>
+                <li>Exploring the Jewish roots of Christianity</li>
+                <li>Focusing on the cultural background of biblical texts</li>
+                <li>Encouraging deeper intimacy with Yeshua</li>
+                <li>Providing practical applications for modern believers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Beliefs and Teachings -->
+        <div class="faq-category">
+          <h3>Beliefs and Teachings</h3>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What are the core beliefs of Rabbi's Garden?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our core beliefs include:</p>
+              <ul>
+                <li>The Bible as the inspired Word of God</li>
+                <li>Yeshua (Jesus) as Messiah and Son of God</li>
+                <li>Salvation through faith in Yeshua</li>
+                <li>The importance of understanding Scripture in its original context</li>
+                <li>The ongoing work of the Holy Spirit in believers' lives</li>
+                <li>The unity of Jewish and Gentile believers in Messiah</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Why focus on the Hebraic understanding of Scripture?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Understanding the Hebrew context of Scripture helps us:</p>
+              <ul>
+                <li>Grasp the original intent of biblical authors</li>
+                <li>Appreciate the cultural background of biblical events</li>
+                <li>See connections between the Old and New Testaments</li>
+                <li>Understand Jewish customs and traditions mentioned in Scripture</li>
+                <li>Gain deeper insights into Yeshua's teachings</li>
+              </ul>
+              <p>This approach enriches our faith without compromising the gospel message.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Do you follow Jewish traditions or laws?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We study Jewish traditions to better understand Scripture, but we believe that salvation comes through faith in Yeshua alone, not through observance of the Law. We respect Jewish traditions as valuable for understanding biblical context, but we don't require observance of them for salvation or Christian living.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Resources and Content -->
+        <div class="faq-category">
+          <h3>Resources and Content</h3>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What kind of content does Rabbi's Garden provide?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We offer various resources including:</p>
+              <ul>
+                <li>Teaching videos and sermons</li>
+                <li>Written Bible studies and articles</li>
+                <li>Hebrew word studies</li>
+                <li>Cultural background explanations</li>
+                <li>Devotionals and practical applications</li>
+                <li>Books and study materials in our shop</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How often is new content added?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We regularly add new content, typically:</p>
+              <ul>
+                <li>Weekly video teachings</li>
+                <li>Monthly in-depth studies</li>
+                <li>Seasonal special teachings around biblical feasts</li>
+                <li>Ongoing additions to our written resources</li>
+              </ul>
+              <p>For the most current schedule, check our website or social media channels.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can I share your content with others?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We encourage you to share our content to bless others. Please:</p>
+              <ul>
+                <li>Share links directly to our website or videos</li>
+                <li>Credit Rabbi's Garden when quoting our materials</li>
+                <li>Don't alter the content in ways that change its meaning</li>
+                <li>Don't use our content for commercial purposes without permission</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Do you offer materials for group study?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we have several resources perfect for group study:</p>
+              <ul>
+                <li>Study guides accompanying many video series</li>
+                <li>Discussion questions for group reflection</li>
+                <li>Printable PDFs of key teachings</li>
+                <li>Recommendations for structuring study sessions</li>
+              </ul>
+              <p>Check our "Sermons" and "Shop" sections for available group materials.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Getting Involved -->
+        <div class="faq-category">
+          <h3>Getting Involved</h3>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How can I support Rabbi's Garden?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>There are several ways to support this ministry:</p>
+              <ul>
+                <li>Pray for our work and outreach</li>
+                <li>Share our content with others</li>
+                <li>Make a financial donation (see our Donations page)</li>
+                <li>Purchase materials from our shop</li>
+                <li>Volunteer your skills (contact us for opportunities)</li>
+                <li>Follow and engage with us on social media</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Are there volunteer opportunities?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We welcome volunteers in areas such as:</p>
+              <ul>
+                <li>Content creation (writing, editing, design)</li>
+                <li>Social media management</li>
+                <li>Video production and editing</li>
+                <li>Administrative support</li>
+                <li>Translation work</li>
+                <li>Event coordination</li>
+              </ul>
+              <p>Contact us through our Contacts page to discuss how you might contribute.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can I request specific teaching topics?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely! We welcome suggestions for teaching topics. While we can't guarantee all requests will be covered, we do consider them seriously. You can submit topic requests through our Contacts page or via social media messages.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Technical Questions -->
+        <div class="faq-category">
+          <h3>Technical Questions</h3>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do I access your video content?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our video content is available through:</p>
+              <ul>
+                <li>Our website's "Sermons" section</li>
+                <li>Our YouTube channel (@mikewuertemburg2204)</li>
+              </ul>
+              <p>All videos are free to access, though some may have accompanying study materials available for purchase.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Why can't I play some videos?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>If you're having trouble playing videos, try these solutions:</p>
+              <ul>
+                <li>Check your internet connection</li>
+                <li>Update your browser or try a different browser</li>
+                <li>Clear your browser's cache and cookies</li>
+                <li>Try accessing from a different device</li>
+                <li>Ensure your ad blocker isn't interfering</li>
+                <li>Check YouTube's status if the problem persists</li>
+              </ul>
+              <p>If issues continue, contact us with details about the problem.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do I reset my password for the shop?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>To reset your shop account password:</p>
+              <ol>
+                <li>Go to the Shop page and click "Login"</li>
+                <li>Click "Forgot Password"</li>
+                <li>Enter the email address associated with your account</li>
+                <li>Check your email for a password reset link</li>
+                <li>Follow the instructions in the email to create a new password</li>
+              </ol>
+              <p>If you don't receive the email, check your spam folder or contact us for assistance.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Events and Community -->
+        <div class="faq-category">
+          <h3>Events and Community</h3>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Does Rabbi's Garden host live events?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we host various events throughout the year including:</p>
+              <ul>
+                <li>Live online Bible studies</li>
+                <li>Special teaching series around biblical feasts</li>
+                <li>Occasional in-person conferences</li>
+                <li>Community outreach events</li>
+              </ul>
+              <p>Check our social media for upcoming event announcements.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How can I connect with other Rabbi's Garden followers?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>There are several ways to connect with our community:</p>
+              <ul>
+                <li>Join the conversation on our social media platforms</li>
+                <li>Participate in live chat during our online events</li>
+                <li>Attend in-person events when available</li>
+                <li>Start or join a local study group using our materials</li>
+                <li>Engage in the comments section under our videos</li>
+              </ul>
+              <p>We're working on more formal community features—stay tuned for updates!</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can Rabbi's Garden speak at my church or event?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We do accept some speaking engagements, depending on schedule availability and alignment with our ministry focus. Please contact us through our Contacts page with details about your event including:</p>
+              <ul>
+                <li>Date and location</li>
+                <li>Expected audience size and demographics</li>
+                <li>Topic or theme of the event</li>
+                <li>Any honorarium or expense coverage available</li>
+              </ul>
+              <p>We'll respond as quickly as our schedule allows.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact and Support -->
+        <div class="faq-category">
+          <h3>Contact and Support</h3>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How can I contact Rabbi's Garden?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>You can reach us through:</p>
+              <ul>
+                <li>Our Contacts page form</li>
+                <li>Email: therabbisgarden@gmail.com</li>
+                <li>Social media direct messages</li>
+                <li>Call: +(256) 744 611 012</li>
+              </ul>
+              <p>Response times vary, but we aim to reply within 3-5 business days.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>I have a prayer request. Can you pray for me?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we would be honored to pray for you. You can submit prayer requests:</p>
+              <ul>
+                <li>Through our Contacts page</li>
+                <li>Via email</li>
+                <li>In the comments of relevant teaching videos</li>
+              </ul>
+              <p>Our team prays over requests regularly. For urgent needs, we recommend also reaching out to your local church community.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>I'm having issues with the website. Who can help?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>For technical issues with the website, please contact us through our Contacts page and include:</p>
+              <ul>
+                <li>A description of the problem</li>
+                <li>The page where it occurred</li>
+                <li>What you were trying to do</li>
+                <li>The device and browser you're using</li>
+                <li>Screenshots if possible</li>
+              </ul>
+              <p>Our tech team will investigate and respond as soon as possible.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact CTA -->
+        <div class="contact-cta">
+          <h3>Still Have Questions?</h3>
+          <p>We're here to help! If you didn't find the answer you were looking for, please reach out to us directly.</p>
+          <a href="contacts.html" class="btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo-container">
+            <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="footer-logo-img">
+            <span class="footer-logo-text">Rabbi's Garden</span>
+          </div>
+          <p>A community-based initiative dedicated to sharing the transformative power of the Bible with the world.</p>
+          <p>Join Us in Spreading the Word: Become a Part of Our Bible Community!</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/rabbisgarden/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rabbis.garden" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@mikewuertemburg2204" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p style="margin-top: 1.2rem; color: #aaa;">Follow our journey and see the impact of your support.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Rabbi's Garden. All rights reserved. | 
+          <a href="privacy.html">Privacy Policy</a> | 
+          <a href="terms.html">Terms & Conditions</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // FAQ Accordion Functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentNode;
+        item.classList.toggle('active');
+        
+        // Close other open items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+          }
+        });
+      });
+    });
+    
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').class.remove('show');
+      });
+    });
+    
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('active');
+      } else {
+        scrollToTopBtn.classList.remove('active');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+      } else {
+        nav.style.boxShadow = '0 3px 15px rgba(0,0,0,0.08)';
+      }
+    });
+
+    // Set active navigation link
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (currentPage === linkPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

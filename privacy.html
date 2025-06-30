@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for Rabbi's Garden - Learn how we protect your personal information.">
+  <title>Privacy Policy | Rabbi's Garden</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-green: #1e8449;
+      --dark-green: #145a32;
+      --light-green: #58d68d;
+      --gold-accent: #f1c40f;
+      --pure-white: #ffffff;
+      --off-white: #f8f9fa;
+      --dark-bg: #1a1a1a;
+      --text-dark: #333333;
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--pure-white);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      font-size: 0.95rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light-green);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--light-green);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 12px rgba(30, 132, 73, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: var(--light-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(88, 214, 141, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--pure-white);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--primary-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.active {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-green);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover:after,
+    .nav-links a.active:after {
+      width: 100%;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    .hamburger:hover {
+      transform: rotate(90deg);
+    }
+
+    /* Header Section */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://i.pinimg.com/736x/ce/e7/e2/cee7e2bb967f3245f75981ea70936e81.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 60vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      max-width: 700px;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease-out;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 20px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+    }
+
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    header p {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      margin: 30px 0;
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* Privacy Policy Content */
+    .privacy-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+
+    .privacy-section {
+      margin-bottom: 40px;
+    }
+
+    .privacy-section h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 20px;
+      color: var(--primary-green);
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .privacy-section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--light-green);
+    }
+
+    .privacy-section h3 {
+      font-size: 1.3rem;
+      margin: 25px 0 15px;
+      color: var(--primary-green);
+    }
+
+    .privacy-section p {
+      margin-bottom: 15px;
+      color: #666;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .privacy-section ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .privacy-section li {
+      margin-bottom: 10px;
+      color: #666;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .highlight-box {
+      background-color: rgba(88, 214, 141, 0.1);
+      border-left: 4px solid var(--light-green);
+      padding: 15px;
+      margin: 25px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      text-align: center;
+      margin-top: 40px;
+      padding: 30px;
+      background-color: var(--primary-green);
+      border-radius: 12px;
+      color: white;
+    }
+
+    .contact-cta h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .contact-cta p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact-cta .btn {
+      background-color: white;
+      color: var(--primary-green);
+    }
+
+    .contact-cta .btn:hover {
+      background-color: var(--gold-accent);
+      color: var(--text-dark);
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      background-color: var(--primary-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .scroll-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--light-green);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-logo-img {
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--pure-white);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.2rem;
+      color: #aaa;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+      color: var(--pure-white);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-links h3:after, .footer-social h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-green);
+      transform: translateX(4px);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--light-green);
+      border: 2px solid var(--light-green);
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--light-green);
+      color: var(--dark-bg);
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--light-green);
+      font-weight: 600;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-container {
+        padding: 0.8rem;
+      }
+      
+      .privacy-section h2::after {
+        width: 50px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--pure-white);
+        flex-direction: column;
+        padding: 1.2rem 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.7rem 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      header {
+        height: 50vh;
+        min-height: 350px;
+      }
+      
+      .privacy-content {
+        padding: 50px 0;
+      }
+      
+      .scroll-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-container {
+        padding: 0.7rem;
+      }
+      
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .logo-img {
+        height: 35px;
+        margin-right: 8px;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .privacy-section h2 {
+        font-size: 1.6rem;
+      }
+      
+      .privacy-section h3 {
+        font-size: 1.2rem;
+      }
+      
+      header h1::after {
+        width: 40px;
+        height: 2px;
+        bottom: -8px;
+      }
+      
+      .footer-logo-img {
+        height: 30px;
+      }
+      
+      .footer-logo-text {
+        font-size: 1.3rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .logo-img {
+        height: 30px;
+      }
+      
+      .privacy-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container container">
+      <a href="index.html" class="logo">
+        <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="logo-img">
+        <span>Rabbi's Garden</span>
+      </a>
+      <div class="hamburger">☰</div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Privacy Policy</h1>
+      <p>Learn how we protect your personal information at Rabbi's Garden</p>
+    </div>
+  </header>
+
+  <!-- Privacy Policy Content -->
+  <div class="privacy-content container">
+    <div class="privacy-section">
+      <p>At Rabbi's Garden, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+      
+      <div class="highlight-box">
+        <p><strong>Key Points:</strong> We never sell your personal data. We use security measures to protect your information. You have control over your data.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <h2>1. Information We Collect</h2>
+      <p>We collect information to provide better services to all our users. The types of information we gather include:</p>
+      
+      <h3>Personal Information</h3>
+      <ul>
+        <li><strong>Contact Details:</strong> Name, email address, phone number when you contact us or make a donation.</li>
+        <li><strong>Payment Information:</strong> When you make purchases or donations, we collect necessary payment details (processed securely by our payment partners).</li>
+        <li><strong>Account Information:</strong> If you create an account, we store your username, password (encrypted), and preferences.</li>
+      </ul>
+      
+      <h3>Non-Personal Information</h3>
+      <ul>
+        <li><strong>Usage Data:</strong> How you interact with our website (pages visited, time spent, links clicked).</li>
+        <li><strong>Device Information:</strong> Browser type, device type, IP address, operating system.</li>
+        <li><strong>Cookies:</strong> Small data files stored on your device to enhance your experience (more details below).</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information we collect for various purposes, including:</p>
+      
+      <ul>
+        <li>To provide and maintain our services</li>
+        <li>To process your donations and purchases</li>
+        <li>To notify you about changes to our services</li>
+        <li>To allow you to participate in interactive features of our service when you choose to do so</li>
+        <li>To provide customer care and support</li>
+        <li>To provide analysis or valuable information so that we can improve our services</li>
+        <li>To monitor the usage of our services</li>
+        <li>To detect, prevent and address technical issues</li>
+        <li>To send you newsletters, updates, and other communications (only if you opt-in)</li>
+      </ul>
+      
+      <h3>Legal Basis for Processing</h3>
+      <p>We process your personal information based on:</p>
+      <ul>
+        <li>Your consent (which you may withdraw at any time)</li>
+        <li>The necessity to perform our contractual obligations to you</li>
+        <li>Our legitimate interests in operating our services</li>
+        <li>Compliance with legal obligations</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>3. Data Sharing and Disclosure</h2>
+      <p>We may share your information in the following situations:</p>
+      
+      <h3>Service Providers</h3>
+      <p>We may employ third-party companies and individuals to facilitate our services ("Service Providers"), to provide services on our behalf, to perform service-related services, or to assist us in analyzing how our services are used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+      
+      <h3>Business Transfers</h3>
+      <p>If Rabbi's Garden is involved in a merger, acquisition, or asset sale, your Personal Data may be transferred. We will provide notice before your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
+      
+      <h3>Legal Requirements</h3>
+      <p>We may disclose your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g., a court or a government agency).</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>4. Data Security</h2>
+      <p>The security of your data is important to us. We implement appropriate technical and organizational measures to protect your personal information against unauthorized or unlawful processing, accidental loss, destruction, or damage.</p>
+      
+      <p>Our security measures include:</p>
+      <ul>
+        <li>Encryption of sensitive data in transit and at rest</li>
+        <li>Regular security assessments and testing</li>
+        <li>Access controls to limit who can view sensitive information</li>
+        <li>Staff training on data protection</li>
+      </ul>
+      
+      <p>However, no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>5. Your Data Protection Rights</h2>
+      <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+      
+      <ul>
+        <li><strong>Access:</strong> You can request copies of your personal data.</li>
+        <li><strong>Rectification:</strong> You can request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+        <li><strong>Erasure:</strong> You can request that we erase your personal data, under certain conditions.</li>
+        <li><strong>Restrict Processing:</strong> You can request that we restrict the processing of your personal data, under certain conditions.</li>
+        <li><strong>Object to Processing:</strong> You can object to our processing of your personal data, under certain conditions.</li>
+        <li><strong>Data Portability:</strong> You can request that we transfer the data we have collected to another organization, or directly to you, under certain conditions.</li>
+      </ul>
+      
+      <p>To exercise any of these rights, please contact us using the information in the "Contact Us" section below.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>6. Cookies and Tracking Technologies</h2>
+      <p>We use cookies and similar tracking technologies to track activity on our website and hold certain information to improve your experience.</p>
+      
+      <h3>Types of Cookies We Use</h3>
+      <ul>
+        <li><strong>Essential Cookies:</strong> Necessary for the website to function properly.</li>
+        <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our website.</li>
+        <li><strong>Functionality Cookies:</strong> Allow the website to remember choices you make.</li>
+        <li><strong>Targeting Cookies:</strong> Used to deliver relevant content and advertisements.</li>
+      </ul>
+      
+      <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>7. Third-Party Services</h2>
+      <p>Our website may contain links to third-party websites and services that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+      
+      <p>We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+      
+      <h3>Third-Party Services We Use</h3>
+      <ul>
+        <li><strong>Payment Processors:</strong> For secure payment processing</li>
+        <li><strong>Analytics Providers:</strong> To understand website usage patterns</li>
+        <li><strong>Email Services:</strong> For sending newsletters and updates</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>8. Children's Privacy</h2>
+      <p>Our services are not directed to individuals under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will take steps to delete such information.</p>
+      
+      <p>If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>9. Changes to This Privacy Policy</h2>
+      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this Privacy Policy.</p>
+      
+      <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>10. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us:</p>
+      
+      <ul>
+        <li>Through our <a href="contacts.html">Contact Us page</a></li>
+      </ul>
+    </div>
+
+    <div class="contact-cta">
+      <h3>Questions About Your Privacy?</h3>
+      <p>If you have any concerns about how we handle your personal information, please don't hesitate to reach out.</p>
+      <a href="contacts.html" class="btn">Contact Our Team</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo-container">
+            <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="footer-logo-img">
+            <span class="footer-logo-text">Rabbi's Garden</span>
+          </div>
+          <p>A community-based initiative dedicated to sharing the transformative power of the Bible with the world.</p>
+          <p>Join Us in Spreading the Word: Become a Part of Our Bible Community!</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/rabbisgarden/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rabbis.garden" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@mikewuertemburg2204" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p style="margin-top: 1.2rem; color: #aaa;">Follow our journey and see the impact of your support.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Rabbi's Garden. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+      } else {
+        nav.style.boxShadow = '0 3px 15px rgba(0,0,0,0.08)';
+      }
+    });
+    
+    // Set active navigation link
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (currentPage === linkPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('nav-menu').classList.remove('show');
+      });
+    });
+    
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('active');
+      } else {
+        scrollToTopBtn.classList.remove('active');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
