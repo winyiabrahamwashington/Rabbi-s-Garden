@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Rabbi's Garden and our mission to spread biblical teachings.">
+  <title>Rabbi's Garden - About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-green: #1e8449;
+      --dark-green: #145a32;
+      --light-green: #58d68d;
+      --gold-accent: #f1c40f;
+      --pure-white: #ffffff;
+      --off-white: #f8f9fa;
+      --dark-bg: #1a1a1a;
+      --text-dark: #333333;
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--pure-white);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      font-size: 0.95rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light-green);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--light-green);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 12px rgba(30, 132, 73, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: var(--light-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(88, 214, 141, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--pure-white);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--primary-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.active {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-green);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover:after,
+    .nav-links a.active:after {
+      width: 100%;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    .hamburger:hover {
+      transform: rotate(90deg);
+    }
+
+    /* Header Section */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae') no-repeat center center/cover;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 90vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      max-width: 700px;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease-out;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 20px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+    }
+
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    header p {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      margin: 30px 0;
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* About Section - Modified to keep rectangular image */
+    #about {
+      background-color: var(--pure-white);
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .about-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-image img {
+      width: 100%;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .about-container .text {
+      flex: 1;
+      max-width: 550px;
+    }
+
+    .about-container h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 20px;
+      color: var(--primary-green);
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-container h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    .about-container p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    /* Mission Section */
+    #mission {
+      background-color: var(--off-white);
+      text-align: center;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    #mission h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--primary-green);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .mission-card {
+      background-color: var(--pure-white);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mission-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--light-green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .mission-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .mission-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .mission-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .mission-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .mission-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--primary-green);
+    }
+
+    .mission-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      background-color: var(--pure-white);
+      text-align: center;
+    }
+
+    #gallery h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--primary-green);
+    }
+
+    .construction-banner {
+      background-color: var(--gold-accent);
+      color: var(--dark-green);
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+      transition: var(--transition);
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .construction-banner:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(241, 196, 15, 0.4);
+    }
+
+    .construction-banner i {
+      margin: 0 8px;
+    }
+
+    .sacred-spaces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .sacred-space {
+      background: var(--off-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .sacred-space:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .sacred-space-header {
+      display: flex;
+      align-items: center;
+      background: var(--primary-green);
+      padding: 12px 15px;
+      color: white;
+    }
+
+    .sacred-space-icon {
+      font-size: 1.2rem;
+      margin-right: 12px;
+      color: var(--gold-accent);
+    }
+
+    .sacred-space-title {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .sacred-space-image {
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .sacred-space-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .sacred-space:hover .sacred-space-image img {
+      transform: scale(1.05);
+    }
+
+    .sacred-space-details {
+      padding: 15px;
+      text-align: left;
+    }
+
+    .sacred-space-details p {
+      margin-bottom: 12px;
+      color: #666;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .sacred-space-features {
+      background: rgba(30, 132, 73, 0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+    }
+
+    .sacred-space-features strong {
+      color: var(--primary-green);
+    }
+
+    /* Impact Section */
+    #impact {
+      padding: 60px 0;
+      background: linear-gradient(rgba(30, 132, 73, 0.9), rgba(30, 132, 73, 0.9)), url('https://images.unsplash.com/photo-1534710961216-75c88202f43a') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: var(--pure-white);
+      text-align: center;
+    }
+
+    #impact h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 25px;
+      color: var(--pure-white);
+      position: relative;
+      display: inline-block;
+    }
+
+    #impact h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gold-accent);
+      border-radius: 2px;
+    }
+
+    .impact-content {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      background-color: var(--primary-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .scroll-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--light-green);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-logo-img {
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--pure-white);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.2rem;
+      color: #aaa;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+      color: var(--pure-white);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-links h3:after, .footer-social h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-green);
+      transform: translateX(4px);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--light-green);
+      border: 2px solid var(--light-green);
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--light-green);
+      color: var(--dark-bg);
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--light-green);
+      font-weight: 600;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-container {
+        padding: 0.8rem;
+      }
+      
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+      }
+      
+      .about-image {
+        margin-bottom: 20px;
+      }
+      
+      .section-title::after,
+      header h1::after,
+      #impact h2::after,
+      .about-container h2::after {
+        width: 50px;
+        height: 3px;
+        bottom: -10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--pure-white);
+        flex-direction: column;
+        padding: 1.2rem 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.7rem 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      .scroll-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      header {
+        min-height: 450px;
+      }
+      
+      .sacred-space-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+      }
+      
+      .sacred-space-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-container {
+        padding: 0.7rem;
+      }
+      
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .logo-img {
+        height: 35px;
+        margin-right: 8px;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .mission-card, .sacred-space {
+        padding: 20px;
+      }
+      
+      .about-image {
+        width: 100%;
+        height: auto;
+      }
+      
+      .header-content {
+        padding: 0 15px;
+      }
+      
+      header h1::after {
+        width: 40px;
+        height: 2px;
+        bottom: -8px;
+      }
+      
+      .footer-logo-img {
+        height: 30px;
+      }
+      
+      .footer-logo-text {
+        font-size: 1.3rem;
+      }
+      
+      .construction-banner {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .mission-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .sacred-spaces-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .logo-img {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container container">
+      <a href="index.html" class="logo">
+        <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="logo-img">
+        <span>Rabbi's Garden</span>
+      </a>
+      <div class="hamburger">☰</div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Our Journey</h1>
+      <p>Explore the spiritual foundation of Rabbi's Garden and our commitment to cultivating faith through God's guidance.</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="https://i.pinimg.com/736x/2e/49/23/2e49235eb2d0110dd010d6e9a0d914c7.jpg" alt="About Rabbi's Garden">
+        </div>
+        <div class="text">
+          <h2>About Rabbi's Garden</h2>
+          <p>Mike Wuertemburg is the creator and owner of Rabbi's Garden. Also founder and President of
+          Equip Ministries along with his wife Edith Wuertemburg.</p>
+          <p>This ministry began in August of 2020 in Fruita, Colorado, USA. Being led by The Holy Spirit I envisioned reaching many nations and encouraging people to grow in
+          their relationship with Yeshua (Jesus). </p>
+          <p>Becoming more intimate with Him. To increase their hunger
+          for the Word and to bless others through their insights to The Creator of the universe YHWH.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section id="mission">
+    <div class="container">
+      <h2 class="section-title">Our Core Values</h2>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <img src="https://i.pinimg.com/736x/89/9b/a5/899ba5bb245bd1d69b2cc65d565f7b8f.jpg" alt="Faith">
+          <h3>Faith</h3>
+          <p>Our organization is rooted in faith, trusting in God's plan for our lives and our work, knowing that with unwavering belief in His power and promises, we can overcome any obstacle and fulfill our calling.</p>
+        </div>
+        <div class="mission-card">
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Love">
+          <h3>Love</h3>
+          <p>At the heart of our Christian organization is the value of love, as we believe that loving others unconditionally, just as Christ loved us, is the foundation of all our actions and relationships.</p>
+        </div>
+        <div class="mission-card">
+          <img src="https://i.pinimg.com/736x/45/61/5e/45615e1da2a1ed83efd3bc07b20334c2.jpg" alt="Stewardship">
+          <h3>Stewardship</h3>
+          <p>Stewardship is central to our mission, as we recognize the responsibility to wisely manage the resources God has entrusted to us, whether that be time, finances, or talents, ensuring they are used to further His Kingdom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Our Sacred Spaces</h2>
+      <p class="subtitle">By faith and your support, these sanctuaries will stand as a blessing for generations.</p>
+      
+      <div class="construction-banner">
+        <i class="fas fa-hard-hat"></i> Under Construction – Witness the hope and vision behind these sacred spaces.<i class="fas fa-hard-hat"></i>
+      </div>
+      
+      <div class="sacred-spaces-grid">
+        <!-- Meditation Sanctuary -->
+        <div class="sacred-space">
+          <div class="sacred-space-header">
+            <div class="sacred-space-icon">
+              <i class="fas fa-spa"></i>
+            </div>
+            <h3 class="sacred-space-title">Meditation Sanctuary</h3>
+          </div>
+          <div class="sacred-space-image">
+            <img src="https://i.pinimg.com/736x/9a/12/50/9a12500f4ae60d26df005f87cd7a4c63.jpg" alt="Meditation Garden Construction">
+          </div>
+          <div class="sacred-space-details">
+            <p>We hope to soon begin preparing the foundation for this tranquil space, thoughtfully designed for prayer and contemplation. With your help, we'll bring it to life complete with water features and lush plantings that will make it a true sanctuary.</p>
+            <div class="sacred-space-features">
+              <p><strong>Your support will provide:</strong> Native plants, benches, and a flowing water feature to enhance meditation.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Biblical Oasis -->
+        <div class="sacred-space">
+          <div class="sacred-space-header">
+            <div class="sacred-space-icon">
+              <i class="fas fa-bible"></i>
+            </div>
+            <h3 class="sacred-space-title">Biblical Oasis</h3>
+          </div>
+          <div class="sacred-space-image">
+            <img src="https://i.pinimg.com/736x/33/b7/71/33b771ee9d01c6b92e5eb89b0b529545.jpg" alt="Biblical Garden Construction">
+          </div>
+          <div class="sacred-space-details">
+            <p>We hope to begin planting the first biblical species soon, as volunteers prepare to create educational displays. Contributions will help us acquire more plants mentioned in scripture and create interpretive signage.</p>
+            <div class="sacred-space-features">
+              <p><strong>Your support will provide:</strong> Olive trees, fig trees, and educational materials about their biblical significance.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Community Blessing -->
+        <div class="sacred-space">
+          <div class="sacred-space-header">
+            <div class="sacred-space-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3 class="sacred-space-title">Community Blessing</h3>
+          </div>
+          <div class="sacred-space-image">
+            <img src="https://i.pinimg.com/736x/a0/dd/61/a0dd61ef4765187d5a1315b57564a417.jpg" alt="Community Garden Construction">
+          </div>
+          <div class="sacred-space-details">
+            <p>We hope to soon see the framework of our community garden take shape, with neighbors coming together to build raised beds. Your donations will help us complete the irrigation system and provide tools for the volunteers who will bring this vision to life.</p>
+            <div class="sacred-space-features">
+              <p><strong>Your support will provide:</strong> Irrigation system, gardening tools, and starter plants for the community.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Healing Haven -->
+        <div class="sacred-space">
+          <div class="sacred-space-header">
+            <div class="sacred-space-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="sacred-space-title">Healing Haven</h3>
+          </div>
+          <div class="sacred-space-image">
+            <img src="https://i.pinimg.com/736x/09/07/db/0907dbe7a979ae0ddd8b488f6566fa12.jpg" alt="Healing Garden Construction">
+          </div>
+          <div class="sacred-space-details">
+            <p>We hope to soon begin installing the first accessible pathways that will wind through this therapeutic space. With your support, we'll be able to add fragrant plants, tactile elements, and quiet seating areas designed for reflection and restoration.</p>
+            <div class="sacred-space-features">
+              <p><strong>Your support will provide:</strong> Accessible pathways, aromatic herbs, and braille signage for visitors.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Prayer Pathway -->
+        <div class="sacred-space">
+          <div class="sacred-space-header">
+            <div class="sacred-space-icon">
+              <i class="fas fa-pray"></i>
+            </div>
+            <h3 class="sacred-space-title">Prayer Pathway</h3>
+          </div>
+          <div class="sacred-space-image">
+            <img src="https://i.pinimg.com/736x/ee/28/7b/ee287bba03cec758a93db92513dc1978.jpg" alt="Prayer Garden Construction">
+          </div>
+          <div class="sacred-space-details">
+            <p>We hope to soon begin marking the outline of our prayer labyrinth, with volunteers preparing the base layer. Your contributions will help us complete the stone pathway and surrounding plantings, creating a sacred space for reflection and spiritual journey.</p>
+            <div class="sacred-space-features">
+              <p><strong>Your support will provide:</strong> Stone pathway materials and drought-resistant border plants.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Memorial Garden -->
+        <div class="sacred-space">
+          <div class="sacred-space-header">
+            <div class="sacred-space-icon">
+              <i class="fas fa-cross"></i>
+            </div>
+            <h3 class="sacred-space-title">Memorial Garden</h3>
+          </div>
+          <div class="sacred-space-image">
+            <img src="https://i.pinimg.com/736x/ca/7f/a2/ca7fa2cbf2a7bf90f8e36351c4cef715.jpg" alt="Memorial Garden Construction">
+          </div>
+          <div class="sacred-space-details">
+            <p>We hope to soon begin clearing the site for our memorial garden, preparing the ground for meaningful perennial plantings. With your support, we'll install commemorative plaques and create a peaceful setting for remembrance and reflection.</p>
+            <div class="sacred-space-features">
+              <p><strong>Your support will provide:</strong> Memorial plaques, perennial flowers, and quiet seating areas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section id="impact">
+    <div class="container">
+      <h2>Our Divine Impact</h2>
+      <div class="impact-content">
+        <p>At Rabbi's Garden, we believe that the Word of God is a transformative force capable of touching every heart and every community. Our divine impact is rooted in the power of the Gospel, through which we aim to uplift, guide, and inspire individuals to live with purpose, faith, and love.</p>
+        <p>We are committed to sharing the message of salvation, healing, and hope, with a focus on making disciples who reflect Christ's love in their everyday lives. By embracing the teachings of the Bible, we seek to create an environment where people can encounter the divine presence of God and experience the transformation that comes from a deeper relationship with Him.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo-container">
+            <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="footer-logo-img">
+            <span class="footer-logo-text">Rabbi's Garden</span>
+          </div>
+          <p>A community-based initiative dedicated to sharing the transformative power of the Bible with the world.</p>
+          <p>Join Us in Spreading the Word: Become a Part of Our Bible Community!</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/rabbisgarden/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rabbis.garden" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@mikewuertemburg2204" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p style="margin-top: 1.2rem; color: #aaa;">Follow our journey and see the impact of your support.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Rabbi's Garden. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+
+    // Set active navigation link
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (currentPage === linkPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('active');
+      } else {
+        scrollToTopBtn.classList.remove('active');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+      } else {
+        nav.style.boxShadow = '0 3px 15px rgba(0,0,0,0.08)';
+      }
+    });
+  </script>
+</body>
+</html>

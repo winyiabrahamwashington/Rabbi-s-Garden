@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rabbi's Garden offers expert gardening services to beautify your home and garden.">
+  <title>Rabbi's Garden - Garden Design Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-green: #1e8449;
+      --dark-green: #145a32;
+      --light-green: #58d68d;
+      --gold-accent: #f1c40f;
+      --pure-white: #ffffff;
+      --off-white: #f8f9fa;
+      --dark-bg: #1a1a1a;
+      --text-dark: #333333;
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--pure-white);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      font-size: 0.95rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light-green);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--light-green);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 12px rgba(30, 132, 73, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: var(--light-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(88, 214, 141, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--pure-white);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--primary-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.active {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-green);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover:after,
+    .nav-links a.active:after {
+      width: 100%;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    .hamburger:hover {
+      transform: rotate(90deg);
+    }
+
+    /* Header Section */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://i.pinimg.com/736x/a1/d0/5b/a1d05b15a6b04b6f7d7e791f34f71a45.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 90vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      max-width: 700px;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease-out;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 20px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+    }
+
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    header p {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      margin: 30px 0;
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* Services Section */
+    #services {
+      background-color: var(--off-white);
+      text-align: center;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    #services h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--primary-green);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .service-item {
+      background-color: var(--pure-white);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--light-green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .service-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .service-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .service-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--primary-green);
+    }
+
+    .service-item p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* About the Leader Section */
+    #about {
+      background-color: var(--pure-white);
+    }
+
+    .leader-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .leader-photo {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--light-green);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .leader-photo:hover {
+      transform: scale(1.04) rotate(2deg);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .leader-container .text {
+      max-width: 550px;
+    }
+
+    .leader-container h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 20px;
+      color: var(--primary-green);
+    }
+
+    .leader-container p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      background-color: var(--off-white);
+      text-align: center;
+    }
+
+    #gallery h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--primary-green);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-thumbnail {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .video-thumbnail:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(88, 214, 141, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .play-button i {
+      color: white;
+      font-size: 24px;
+      margin-left: 4px;
+    }
+
+    .video-thumbnail:hover .play-button {
+      background-color: rgba(88, 214, 141, 0.95);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    /* Floating Video Player - UPDATED */
+    .floating-video {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      z-index: 999;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: move;
+      resize: both;
+      min-width: 200px;
+      min-height: 150px;
+      max-width: 90vw;
+      max-height: 90vh;
+      touch-action: none;
+    }
+
+    .floating-video video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .video-controls {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: auto;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      width: auto;
+    }
+
+    .floating-video:hover .video-controls {
+      opacity: 1;
+    }
+
+    .video-controls button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 0 0 5px;
+      padding: 5px;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .video-controls button:hover {
+      background-color: var(--light-green);
+      transform: scale(1.1);
+    }
+
+    .resize-handle {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      right: 0;
+      bottom: 0;
+      background: var(--light-green);
+      cursor: nwse-resize;
+      z-index: 1000;
+      border-radius: 2px 0 0 0;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      background-color: var(--primary-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .scroll-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--light-green);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-logo-img {
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--pure-white);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.2rem;
+      color: #aaa;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+      color: var(--pure-white);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-links h3:after, .footer-social h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-green);
+      transform: translateX(4px);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--light-green);
+      border: 2px solid var(--light-green);
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--light-green);
+      color: var(--dark-bg);
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--light-green);
+      font-weight: 600;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-container {
+        padding: 0.8rem;
+      }
+      
+      .leader-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+      }
+      
+      .leader-photo {
+        margin-bottom: 0;
+      }
+      
+      .section-title::after,
+      header h1::after {
+        width: 50px;
+        height: 3px;
+        bottom: -10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--pure-white);
+        flex-direction: column;
+        padding: 1.2rem 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.7rem 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      .scroll-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      header {
+        min-height: 450px;
+      }
+      
+      .floating-video {
+        width: 250px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-container {
+        padding: 0.7rem;
+      }
+      
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .logo-img {
+        height: 35px;
+        margin-right: 8px;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .service-item, .video-thumbnail {
+        padding: 20px;
+      }
+      
+      .leader-photo {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .header-content {
+        padding: 0 15px;
+      }
+      
+      header h1::after {
+        width: 40px;
+        height: 2px;
+        bottom: -8px;
+      }
+      
+      .footer-logo-img {
+        height: 30px;
+      }
+      
+      .footer-logo-text {
+        font-size: 1.3rem;
+      }
+      
+      .floating-video {
+        width: 200px;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .logo-img {
+        height: 30px;
+      }
+      
+      .floating-video {
+        width: 180px;
+      }
+      
+      .video-controls button {
+        font-size: 14px;
+        width: 26px;
+        height: 26px;
+        margin: 0 3px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container container">
+      <a href="index.html" class="logo">
+        <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="logo-img">
+        <span>Rabbi's Garden</span>
+      </a>
+      <div class="hamburger">☰</div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Floating Video Player -->
+  <div class="floating-video" id="floatingVideo">
+    <video id="localVideo" controls autoplay muted playsinline loop>
+      <source src="Photos/Video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-controls">
+      <button id="closeVideo" title="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="resize-handle"></div>
+  </div>
+
+  <!-- Header -->
+  <header id="home">
+    <div class="header-content">
+      <h1>Rabbi's Garden</h1>
+      <p>In a world that often feels disconnected, Rabbi's Garden offers a beacon of hope and community, rooted in the timeless wisdom of the Bible.</p>
+      <a href="donations.html" class="btn">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Mission and Vision</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <img src="Photos/20250523_161109.jpg" alt="Rabbi's Garden">
+          <h3>Mission</h3>
+          <p>The mission is to teach more from a Hebraic understanding of The Scriptures, the language and
+            culture of the Hebrews. Expanding the Kingdom of YHWH here on earth.</p>
+        </div>
+        <div class="service-item">
+          <img src="Photos/20250520_170011.jpg" alt="Rabbi's Garden">
+          <h3>Mission</h3>
+          <p>To equip individuals and churches with the resources and training necessary to deepen their understanding and application of the Bible.</p>
+        </div>
+        <div class="service-item">
+          <img src="Photos/20250520_164259.jpg" alt="Rabbi's Garden">
+          <h3>Vision</h3>
+          <p>To be a movement for all people to discover and deepen a relationship with YHWH.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Leader Section -->
+  <section id="about">
+    <div class="container">
+      <div class="leader-container">
+        <img src="Photos/1746054334618.png" alt="Rabbi's Garden" class="leader-photo">
+        <div class="text">
+          <h2 class="section-title">About the Leader</h2>
+          <p>Mike Wuertemburg is the creator and owner of Rabbi's Garden. Also founder and President of
+          Equip Ministries along with his wife Edith Wuertemburg.
+          Being led by The Holy Spirit I envisioned reaching many nations and encouraging people to grow in
+          their relationship with Yeshua (Jesus). Becoming more intimate with Him. To increase their hunger
+          for the Word and to bless others through their insights to The Creator of the universe YHWH.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Videos</h2>
+      <div class="gallery-grid">
+        <!-- Local Video -->
+        <div class="video-thumbnail" 
+             style="background-image: url('Photos/Screenshot%202025-08-19%20041209.png');"
+             onclick="loadLocalVideo(this)">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <!-- Video 1 -->
+        <div class="video-thumbnail" 
+             style="background-image: url('https://img.youtube.com/vi/_Y_w2Zuzhlk/maxresdefault.jpg');"
+             onclick="loadVideo('_Y_w2Zuzhlk', this)">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="video-thumbnail" 
+             style="background-image: url('https://img.youtube.com/vi/8ebtvKmUEuI/maxresdefault.jpg');"
+             onclick="loadVideo('8ebtvKmUEuI', this)">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        
+        <!-- Video 3 -->
+        <div class="video-thumbnail" 
+             style="background-image: url('https://img.youtube.com/vi/upix0_OyAUo/maxresdefault.jpg');"
+             onclick="loadVideo('upix0_OyAUo', this)">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo-container">
+            <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="footer-logo-img">
+            <span class="footer-logo-text">Rabbi's Garden</span>
+          </div>
+          <p>A community-based initiative dedicated to sharing the transformative power of the Bible with the world.</p>
+          <p>Join Us in Spreading the Word: Become a Part of Our Bible Community!</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/rabbisgarden/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rabbis.garden" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@mikewuertemburg2204" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p style="margin-top: 1.2rem; color: #aaa;">Follow our journey and see the impact of your support.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Rabbi's Garden. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+      } else {
+        nav.style.boxShadow = '0 3px 15px rgba(0,0,0,0.08)';
+      }
+    });
+    
+    // Set active navigation link
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (currentPage === linkPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+      
+      // Initialize floating video
+      const floatingVideo = document.getElementById('floatingVideo');
+      const localVideo = document.getElementById('localVideo');
+      const closeVideoBtn = document.getElementById('closeVideo');
+      
+      // Auto-play the video (muted for autoplay to work)
+      const playVideo = () => {
+        const promise = localVideo.play();
+        
+        if (promise !== undefined) {
+          promise.catch(error => {
+            // Auto-play was prevented
+            console.log('Autoplay prevented:', error);
+            // Show custom play button for mobile
+            showMobilePlayButton();
+          });
+        }
+      };
+      
+      // Show mobile play button for devices that block autoplay
+      const showMobilePlayButton = () => {
+        const playOverlay = document.createElement('div');
+        playOverlay.style.position = 'absolute';
+        playOverlay.style.top = '0';
+        playOverlay.style.left = '0';
+        playOverlay.style.width = '100%';
+        playOverlay.style.height = '100%';
+        playOverlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
+        playOverlay.style.display = 'flex';
+        playOverlay.style.justifyContent = 'center';
+        playOverlay.style.alignItems = 'center';
+        playOverlay.style.cursor = 'pointer';
+        playOverlay.style.zIndex = '10';
+        
+        const playIcon = document.createElement('div');
+        playIcon.innerHTML = '<i class="fas fa-play" style="font-size: 48px; color: white;"></i>';
+        playOverlay.appendChild(playIcon);
+        
+        playOverlay.addEventListener('click', () => {
+          localVideo.play();
+          playOverlay.remove();
+        });
+        
+        floatingVideo.appendChild(playOverlay);
+      };
+      
+      // Try to play the video
+      playVideo();
+      
+      // Make floating video draggable (improved version)
+      let isDragging = false;
+      let isResizing = false;
+      let offsetX, offsetY;
+      let startWidth, startHeight, startX, startY;
+      
+      // Handle drag start
+      floatingVideo.addEventListener('mousedown', handleDragStart);
+      floatingVideo.addEventListener('touchstart', handleDragStart, {passive: false});
+      
+      // Handle resize start
+      const resizeHandle = document.querySelector('.resize-handle');
+      resizeHandle.addEventListener('mousedown', handleResizeStart);
+      resizeHandle.addEventListener('touchstart', handleResizeStart, {passive: false});
+      
+      function handleDragStart(e) {
+        // Don't drag if clicking on controls or resize handle
+        if (e.target.closest('.video-controls') || e.target.closest('.resize-handle')) {
+          return;
+        }
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        isDragging = true;
+        
+        // Get initial position
+        const rect = floatingVideo.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        
+        offsetX = clientX - rect.left;
+        offsetY = clientY - rect.top;
+        
+        // Prevent text selection during drag
+        document.body.style.userSelect = 'none';
+        document.body.style.webkitUserSelect = 'none';
+        
+        document.addEventListener('mousemove', handleDragMove);
+        document.addEventListener('touchmove', handleDragMove, {passive: false});
+        document.addEventListener('mouseup', handleDragEnd);
+        document.addEventListener('touchend', handleDragEnd);
+      }
+      
+      function handleDragMove(e) {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        
+        // Calculate new position
+        let newLeft = clientX - offsetX;
+        let newTop = clientY - offsetY;
+        
+        // Constrain to viewport
+        const maxLeft = window.innerWidth - floatingVideo.offsetWidth;
+        const maxTop = window.innerHeight - floatingVideo.offsetHeight;
+        
+        newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+        newTop = Math.max(0, Math.min(newTop, maxTop));
+        
+        floatingVideo.style.left = newLeft + 'px';
+        floatingVideo.style.top = newTop + 'px';
+        floatingVideo.style.right = 'auto';
+        floatingVideo.style.bottom = 'auto';
+      }
+      
+      function handleDragEnd() {
+        isDragging = false;
+        
+        // Restore text selection
+        document.body.style.userSelect = '';
+        document.body.style.webkitUserSelect = '';
+        
+        document.removeEventListener('mousemove', handleDragMove);
+        document.removeEventListener('touchmove', handleDragMove);
+        document.removeEventListener('mouseup', handleDragEnd);
+        document.removeEventListener('touchend', handleDragEnd);
+      }
+      
+      function handleResizeStart(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        isResizing = true;
+        startWidth = floatingVideo.offsetWidth;
+        startHeight = floatingVideo.offsetHeight;
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        startX = clientX;
+        startY = clientY;
+        
+        // Prevent text selection during resize
+        document.body.style.userSelect = 'none';
+        document.body.style.webkitUserSelect = 'none';
+        
+        document.addEventListener('mousemove', handleResizeMove);
+        document.addEventListener('touchmove', handleResizeMove, {passive: false});
+        document.addEventListener('mouseup', handleResizeEnd);
+        document.addEventListener('touchend', handleResizeEnd);
+      }
+      
+      function handleResizeMove(e) {
+        if (!isResizing) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        
+        const newWidth = startWidth + (clientX - startX);
+        const newHeight = startHeight + (clientY - startY);
+        
+        // Apply constraints
+        floatingVideo.style.width = Math.max(200, Math.min(newWidth, window.innerWidth * 0.9)) + 'px';
+        floatingVideo.style.height = Math.max(150, Math.min(newHeight, window.innerHeight * 0.9)) + 'px';
+      }
+      
+      function handleResizeEnd() {
+        isResizing = false;
+        
+        // Restore text selection
+        document.body.style.userSelect = '';
+        document.body.style.webkitUserSelect = '';
+        
+        document.removeEventListener('mousemove', handleResizeMove);
+        document.removeEventListener('touchmove', handleResizeMove);
+        document.removeEventListener('mouseup', handleResizeEnd);
+        document.removeEventListener('touchend', handleResizeEnd);
+      }
+      
+      // Close floating video
+      closeVideoBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        floatingVideo.style.display = 'none';
+        localVideo.pause();
+        localVideo.currentTime = 0;
+      });
+      
+      // Handle mobile device orientation changes
+      window.addEventListener('orientationchange', function() {
+        // Reposition the video after orientation change
+        setTimeout(() => {
+          floatingVideo.style.right = '20px';
+          floatingVideo.style.bottom = '20px';
+          floatingVideo.style.left = 'auto';
+          floatingVideo.style.top = 'auto';
+        }, 300);
+      });
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('nav-menu').classList.remove('show');
+      });
+    });
+    
+    // YouTube Video Loader
+    function loadVideo(videoId, element) {
+      // Create the iframe
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      
+      // Replace the thumbnail with the iframe
+      const videoContainer = document.createElement('div');
+      videoContainer.className = 'video-container';
+      videoContainer.appendChild(iframe);
+      
+      // Replace the element
+      element.parentNode.replaceChild(videoContainer, element);
+    }
+    
+    // Local Video Loader
+    function loadLocalVideo(element) {
+      const floatingVideo = document.getElementById('floatingVideo');
+      const localVideo = document.getElementById('localVideo');
+      
+      // Show the floating video if it was hidden
+      floatingVideo.style.display = 'block';
+      
+      // Position the video in the bottom right
+      floatingVideo.style.left = 'auto';
+      floatingVideo.style.top = 'auto';
+      floatingVideo.style.right = '20px';
+      floatingVideo.style.bottom = '20px';
+      
+      // Play the video from the beginning
+      localVideo.currentTime = 0;
+      localVideo.play().catch(e => console.log('Video play prevented:', e));
+    }
+    
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('active');
+      } else {
+        scrollToTopBtn.classList.remove('active');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

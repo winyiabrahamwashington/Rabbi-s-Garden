@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rabbi's Garden offers biblical teachings and sermons to nourish your spiritual life.">
+  <title>Rabbi's Garden - Sermons & Teachings</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-green: #1e8449;
+      --dark-green: #145a32;
+      --light-green: #58d68d;
+      --gold-accent: #f1c40f;
+      --pure-white: #ffffff;
+      --off-white: #f8f9fa;
+      --dark-bg: #1a1a1a;
+      --text-dark: #333333;
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--pure-white);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      font-size: 0.95rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light-green);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--light-green);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 12px rgba(30, 132, 73, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: var(--light-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(88, 214, 141, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--pure-white);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--primary-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.active {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-green);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-green);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover:after,
+    .nav-links a.active:after {
+      width: 100%;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      transition: var(--transition);
+    }
+
+    .hamburger:hover {
+      transform: rotate(90deg);
+    }
+
+    /* Header Section */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://i.pinimg.com/736x/d9/42/e6/d942e6583e3661c5ea62070ce9300189.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 90vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      max-width: 700px;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease-out;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 20px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+    }
+
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    header p {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      margin: 30px 0;
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* Sermons Section */
+    #sermons {
+      background-color: var(--off-white);
+      text-align: center;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--light-green);
+      border-radius: 2px;
+    }
+
+    #sermons h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--primary-green);
+    }
+
+    .sermons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .sermon-card {
+      background-color: var(--pure-white);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      overflow: hidden;
+      position: relative;
+      text-align: left;
+    }
+
+    .sermon-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--light-green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .sermon-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .sermon-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .sermon-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .sermon-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .sermon-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--primary-green);
+    }
+
+    .sermon-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .watch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .watch-btn:hover {
+      background-color: var(--dark-green);
+      transform: translateY(-2px);
+    }
+
+    /* Topics Section */
+    #topics {
+      background-color: var(--pure-white);
+      text-align: center;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .topic-card {
+      background-color: var(--off-white);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      overflow: hidden;
+      position: relative;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .topic-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--light-green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .topic-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .topic-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .topic-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .topic-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .topic-icon {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      color: var(--primary-green);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .topic-card:hover .topic-icon {
+      background-color: var(--primary-green);
+      color: white;
+      transform: scale(1.08);
+    }
+
+    .topic-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--primary-green);
+    }
+
+    .topic-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .learn-more {
+      display: inline-block;
+      color: var(--primary-green);
+      font-weight: 600;
+      font-size: 0.9em;
+      transition: var(--transition);
+    }
+
+    .topic-card:hover .learn-more {
+      color: var(--dark-green);
+    }
+
+    /* Scripture Panel */
+    .scripture-panel {
+      background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+      color: white;
+      padding: 60px 0;
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .scripture-panel .container {
+      max-width: 700px;
+    }
+
+    .scripture-panel h2 {
+      color: white;
+      margin-bottom: 25px;
+      font-size: clamp(1.6rem, 4vw, 2rem);
+    }
+
+    .scripture-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      line-height: 1.7;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+
+    .scripture-ref {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* YouTube Channel Section */
+    .youtube-channel {
+      background-color: var(--off-white);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      background-color: var(--primary-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .scroll-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--light-green);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-logo-img {
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--pure-white);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.2rem;
+      color: #aaa;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+      color: var(--pure-white);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-links h3:after, .footer-social h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-green);
+      transform: translateX(4px);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--light-green);
+      border: 2px solid var(--light-green);
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--light-green);
+      color: var(--dark-bg);
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--light-green);
+      font-weight: 600;
+    }
+
+    /* Topic Article Page Styles */
+    .topic-article {
+      padding: 40px 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .topic-article img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .topic-article h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: var(--primary-green);
+    }
+
+    .topic-article h4 {
+      font-size: 1.4rem;
+      margin: 25px 0 15px;
+      color: var(--dark-green);
+    }
+
+    .topic-article p, .topic-article ul {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .topic-article ul {
+      padding-left: 20px;
+    }
+
+    .topic-article li {
+      margin-bottom: 10px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 30px;
+      color: var(--primary-green);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .back-link:hover {
+      color: var(--light-green);
+      transform: translateX(-4px);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .nav-container {
+        padding: 0.8rem;
+      }
+      
+      .section-title::after,
+      header h1::after {
+        width: 50px;
+        height: 3px;
+        bottom: -10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--pure-white);
+        flex-direction: column;
+        padding: 1.2rem 0;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.7rem 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      .scroll-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      header {
+        min-height: 450px;
+      }
+      
+      .scripture-panel {
+        padding: 50px 0;
+        margin: 50px 0;
+      }
+      
+      .topic-article h2 {
+        font-size: 1.8rem;
+      }
+      
+      .topic-article h4 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-container {
+        padding: 0.7rem;
+      }
+      
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .logo-img {
+        height: 35px;
+        margin-right: 8px;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .sermon-card, .topic-card {
+        padding: 20px;
+      }
+      
+      .header-content {
+        padding: 0 15px;
+      }
+      
+      header h1::after {
+        width: 40px;
+        height: 2px;
+        bottom: -8px;
+      }
+      
+      .footer-logo-img {
+        height: 30px;
+      }
+      
+      .footer-logo-text {
+        font-size: 1.3rem;
+      }
+      
+      .topic-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+      }
+      
+      .topic-article {
+        padding: 30px 15px;
+      }
+      
+      .topic-article h2 {
+        font-size: 1.6rem;
+      }
+      
+      .topic-article h4 {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .sermons-grid, .topics-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .logo-img {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container container">
+      <a href="index.html" class="logo">
+        <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="logo-img">
+        <span>Rabbi's Garden</span>
+      </a>
+      <div class="hamburger">☰</div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="sermons.html" class="active">Sermons</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Spiritual Nourishment for Your Soul</h1>
+      <p>Discover profound biblical teachings that will transform your walk with God</p>
+      <a href="#sermons" class="btn">Watch Sermons</a>
+    </div>
+  </header>
+
+  <!-- Sermons Section -->
+  <section id="sermons">
+    <div class="container">
+      <h2 class="section-title">Featured Sermons</h2>
+      <p>Explore our collection of inspiring messages that will strengthen your faith and deepen your understanding of God's Word.</p>
+      
+      <div class="sermons-grid">
+        <!-- Sermon 1 -->
+        <div class="sermon-card">
+          <img src="https://i.pinimg.com/736x/28/42/11/28421153adf60f720f32dcb020496362.jpg" alt="Bible Study">
+          <h3>The Power of Faith</h3>
+          <p>Discover how faith can move mountains and transform your life in ways you never imagined possible.</p>
+          <a href="https://www.youtube.com/watch?v=mQAn0YHmiCM" class="watch-btn" target="_blank">
+            <i class="fab fa-youtube"></i> Watch Now
+          </a>
+        </div>
+        
+        <!-- Sermon 2 -->
+        <div class="sermon-card">
+          <img src="https://i.pinimg.com/736x/6a/85/18/6a8518f73a5e3641432bd795d0b0aadd.jpg" alt="Prayer Gathering">
+          <h3>Prayer That Changes Things</h3>
+          <p>Learn the secrets of effective prayer that brings heaven's answers to earth's challenges.</p>
+          <a href="https://www.youtube.com/watch?v=VpH8sEn_Yos" class="watch-btn" target="_blank">
+            <i class="fab fa-youtube"></i> Watch Now
+          </a>
+        </div>
+        
+        <!-- Sermon 3 -->
+        <div class="sermon-card">
+          <img src="https://i.pinimg.com/736x/70/36/89/703689b29d5d7163cea4889a20084798.jpg" alt="Worship Service">
+          <h3>Living in God's Presence</h3>
+          <p>Experience the joy and peace that comes from dwelling continually in God's presence.</p>
+          <a href="https://www.youtube.com/watch?v=Y1CmFOjJRLA" class="watch-btn" target="_blank">
+            <i class="fab fa-youtube"></i> Watch Now
+          </a>
+        </div>
+        
+        <!-- Sermon 4 -->
+        <div class="sermon-card">
+          <img src="https://i.pinimg.com/736x/1d/32/57/1d32576b9d42141917d5ba4f54a984d5.jpg" alt="Bible Teaching">
+          <h3>Overcoming Life's Storms</h3>
+          <p>Biblical principles to help you stand strong when the storms of life come your way.</p>
+          <a href="https://www.youtube.com/watch?v=5Zn8tYAa8aU" class="watch-btn" target="_blank">
+            <i class="fab fa-youtube"></i> Watch Now
+          </a>
+        </div>
+        
+        <!-- Sermon 5 -->
+        <div class="sermon-card">
+          <img src="https://i.pinimg.com/736x/99/69/6e/99696ea31d5989e64fd2e595f8f866ce.jpg" alt="Church Service">
+          <h3>The Heart of Worship</h3>
+          <p>Discover what true worship is and how it transforms both the worshipper and the atmosphere.</p>
+          <a href="https://www.youtube.com/watch?v=5Zn8tYAa8aU" class="watch-btn" target="_blank">
+            <i class="fab fa-youtube"></i> Watch Now
+          </a>
+        </div>
+        
+        <!-- Sermon 6 -->
+        <div class="sermon-card">
+          <img src="https://i.pinimg.com/736x/d1/dc/bc/d1dcbc493bbfd027bba4ba96d41ee685.jpg" alt="Bible Study Group">
+          <h3>Walking in Love</h3>
+          <p>Practical teaching on how to walk in God's love toward others in everyday situations.</p>
+          <a href="https://www.youtube.com/watch?v=el887E9TeW0" class="watch-btn" target="_blank">
+            <i class="fab fa-youtube"></i> Watch Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripture Panel -->
+  <section class="scripture-panel">
+    <div class="container">
+      <h2>Today's Scripture</h2>
+      <div class="scripture-text" id="dailyScripture">
+        "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!"
+      </div>
+      <div class="scripture-ref" id="scriptureReference">2 Corinthians 5:17 (NIV)</div>
+    </div>
+  </section>
+
+  <!-- Topics Section -->
+  <section id="topics">
+    <div class="container">
+      <h2 class="section-title">Explore Christian Topics</h2>
+      <p>Dive deeper into various aspects of Christian living and biblical teachings.</p>
+      
+      <div class="topics-grid" id="topicsContainer">
+        <!-- Topic 1 -->
+        <a href="topic.html?id=1" class="topic-card">
+          <img src="https://i.pinimg.com/736x/b3/10/32/b31032ab2b7295854e8d912b454cd754.jpg" alt="Prayer Life">
+          <div class="topic-icon">
+            <i class="fas fa-pray"></i>
+          </div>
+          <h3>Prayer Life</h3>
+          <p>Developing a consistent prayer life that transforms your relationship with God.</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+        
+        <!-- Topic 2 -->
+        <a href="topic.html?id=2" class="topic-card">
+          <img src="https://i.pinimg.com/736x/35/b0/a7/35b0a73cf6c09c9c96d950b5809b90a5.jpg" alt="Bible Study">
+          <div class="topic-icon">
+            <i class="fas fa-bible"></i>
+          </div>
+          <h3>Bible Study</h3>
+          <p>Effective methods for studying and applying God's Word to your life.</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+        
+        <!-- Topic 3 -->
+        <a href="topic.html?id=3" class="topic-card">
+          <img src="https://i.pinimg.com/736x/f9/4e/4c/f94e4cbe834ca9a8f84d919ed91b7ae0.jpg" alt="Christian Service">
+          <div class="topic-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3>Christian Service</h3>
+          <p>Discovering and using your spiritual gifts to serve in God's kingdom.</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+        
+        <!-- Topic 4 -->
+        <a href="topic.html?id=4" class="topic-card">
+          <img src="https://i.pinimg.com/736x/3d/0a/8e/3d0a8e1a6b2f1d8e8c9b7c9e3b1c5d5e.jpg" alt="Spiritual Growth">
+          <div class="topic-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <h3>Spiritual Growth</h3>
+          <p>Understanding the process of spiritual maturation and how to grow in your faith.</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+        
+        <!-- Topic 5 -->
+        <a href="topic.html?id=5" class="topic-card">
+          <img src="https://i.pinimg.com/736x/9a/3b/7c/9a3b7c8b8c8b8c8b8c8b8c8b8c8b8c8b.jpg" alt="Christian Relationships">
+          <div class="topic-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Christian Relationships</h3>
+          <p>Building godly relationships based on biblical principles and love.</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+        
+        <!-- Topic 6 -->
+        <a href="topic.html?id=6" class="topic-card">
+          <img src="https://i.pinimg.com/736x/8c/9b/7c/8c9b7c8b8c8b8c8b8c8b8c8b8c8b8c8b.jpg" alt="Faith in Practice">
+          <div class="topic-icon">
+            <i class="fas fa-church"></i>
+          </div>
+          <h3>Faith in Practice</h3>
+          <p>Applying your faith to everyday life situations and challenges.</p>
+          <span class="learn-more">Learn More →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Channel Section -->
+  <section class="youtube-channel">
+    <div class="container">
+      <h2 class="section-title">Watch More Teachings</h2>
+      <p>Visit our YouTube channel for more inspiring sermons and biblical teachings.</p>
+      <a href="https://www.youtube.com/@mikewuertemburg2204/featured" class="btn" target="_blank">
+        <i class="fab fa-youtube"></i> Visit Our YouTube Channel
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo-container">
+            <img src="Photos/logo.png.png" alt="Rabbi's Garden" class="footer-logo-img">
+            <span class="footer-logo-text">Rabbi's Garden</span>
+          </div>
+          <p>A community-based initiative dedicated to sharing the transformative power of the Bible with the world.</p>
+          <p>Join Us in Spreading the Word: Become a Part of Our Bible Community!</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/rabbisgarden/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rabbis.garden" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@mikewuertemburg2204" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p style="margin-top: 1.2rem; color: #aaa;">Follow our journey and see the impact of your support.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Rabbi's Garden. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Topic data
+    const topicsData = [
+      {
+        id: 1,
+        title: "Prayer Life",
+        description: "Developing a consistent prayer life that transforms your relationship with God.",
+        image: "https://i.pinimg.com/736x/b3/10/32/b31032ab2b7295854e8d912b454cd754.jpg",
+        content: `<img src="https://i.pinimg.com/736x/4d/51/cd/4d51cdc463ea660cd47d9213e2e41d33.jpg" alt="Prayer">
+                  <h4>Developing a Powerful Prayer Life</h4>
+                  <p>Prayer is the lifeline of every believer. In this teaching, we explore how to develop a consistent and effective prayer life that transforms your relationship with God.</p>
+                  <p>Key points include:</p>
+                  <ul>
+                    <li>Understanding different types of prayer (adoration, confession, thanksgiving, supplication)</li>
+                    <li>Creating a prayer routine that works for your schedule</li>
+                    <li>Overcoming common prayer obstacles like distraction and doubt</li>
+                    <li>Recognizing and responding to God's answers to prayer</li>
+                    <li>The role of fasting in strengthening prayer</li>
+                  </ul>
+                  <p>Jesus modeled prayer for us throughout His ministry, showing us that prayer is not just about asking for things, but about cultivating intimacy with the Father. In the Garden of Gethsemane, we see His most vulnerable prayer moments (Matthew 26:36-46).</p>
+                  <p>Recommended resources: "The Prayer Life" by Andrew Murray, "Prayer" by Timothy Keller</p>`
+      },
+      {
+        id: 2,
+        title: "Bible Study",
+        description: "Effective methods for studying and applying God's Word to your life.",
+        image: "https://i.pinimg.com/736x/35/b0/a7/35b0a73cf6c09c9c96d950b5809b90a5.jpg",
+        content: `<img src="https://i.pinimg.com/736x/2a/9e/36/2a9e36c57cd2f0fc0c8db70250bdfcdc.jpg" alt="Bible Study">
+                  <h4>Effective Bible Study Methods</h4>
+                  <p>The Bible is God's living Word to us, and studying it should be a dynamic, life-changing experience. This teaching covers practical approaches to Bible study that go beyond surface reading.</p>
+                  <p>We'll examine:</p>
+                  <ul>
+                    <li>The inductive Bible study method (Observation, Interpretation, Application)</li>
+                    <li>Understanding cultural and historical context for deeper insight</li>
+                    <li>Applying Scripture to modern life situations</li>
+                    <li>Memorization techniques to hide God's Word in your heart</li>
+                    <li>Using study tools like concordances, commentaries, and Bible dictionaries</li>
+                  </ul>
+                  <p>"All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness" (2 Timothy 3:16). The Bereans were commended for examining Scripture daily (Acts 17:11).</p>
+                  <p>Recommended resources: "How to Study the Bible" by Dwight Moody, "Living by the Book" by Howard Hendricks</p>`
+      },
+      {
+        id: 3,
+        title: "Christian Service",
+        description: "Discovering and using your spiritual gifts to serve in God's kingdom.",
+        image: "https://i.pinimg.com/736x/f9/4e/4c/f94e4cbe834ca9a8f84d919ed91b7ae0.jpg",
+        content: `<img src="https://i.pinimg.com/736x/21/80/5e/21805ea623588adbab3cacb6d1508077.jpg" alt="Service">
+                  <h4>Serving in God's Kingdom</h4>
+                  <p>Every believer is called to serve in God's kingdom. This teaching explores how to discover your spiritual gifts and use them effectively in ministry.</p>
+                  <p>Topics covered:</p>
+                  <ul>
+                    <li>Identifying your spiritual gifts (Romans 12:6-8, 1 Corinthians 12:4-11)</li>
+                    <li>Finding your place in the body of Christ (1 Corinthians 12:12-27)</li>
+                    <li>Serving with the right motives (Colossians 3:23-24)</li>
+                    <li>Overcoming obstacles to service like fear and insecurity</li>
+                    <li>Balancing service with spiritual and physical rest</li>
+                  </ul>
+                  <p>"Each of you should use whatever gift you have received to serve others, as faithful stewards of God's grace in its various forms." (1 Peter 4:10). Jesus exemplified servant leadership by washing His disciples' feet (John 13:1-17).</p>
+                  <p>Recommended resources: "The Purpose Driven Life" by Rick Warren, "Serving Like Jesus" by Joe Stowell</p>`
+      },
+      {
+        id: 4,
+        title: "Spiritual Growth",
+        description: "Understanding the process of spiritual maturation and how to grow in your faith.",
+        image: "https://i.pinimg.com/736x/3d/0a/8e/3d0a8e1a6b2f1d8e8c9b7c9e3b1c5d5e.jpg",
+        content: `<img src="https://i.pinimg.com/736x/3d/0a/8e/3d0a8e1a6b2f1d8e8c9b7c9e3b1c5d5e.jpg" alt="Spiritual Growth">
+                  <h4>The Journey of Spiritual Growth</h4>
+                  <p>Spiritual growth is a lifelong process of becoming more like Christ. This teaching explores the biblical principles of spiritual development and how to cultivate a thriving relationship with God.</p>
+                  <p>Key areas of focus:</p>
+                  <ul>
+                    <li>The role of the Holy Spirit in transformation</li>
+                    <li>Spiritual disciplines that foster growth (prayer, fasting, meditation)</li>
+                    <li>Overcoming spiritual plateaus and stagnation</li>
+                    <li>The importance of community in spiritual development</li>
+                    <li>Recognizing and responding to God's pruning process</li>
+                  </ul>
+                  <p>"But grow in the grace and knowledge of our Lord and Savior Jesus Christ." (2 Peter 3:18). Like the parable of the sower, our hearts must be prepared to receive God's Word for growth to occur (Matthew 13:1-23).</p>
+                  <p>Recommended resources: "The Spirit-Filled Life" by Charles Stanley, "Celebration of Discipline" by Richard Foster</p>`
+      },
+      {
+        id: 5,
+        title: "Christian Relationships",
+        description: "Building godly relationships based on biblical principles and love.",
+        image: "https://i.pinimg.com/736x/9a/3b/7c/9a3b7c8b8c8b8c8b8c8b8c8b8c8b8c8b.jpg",
+        content: `<img src="https://i.pinimg.com/736x/9a/3b/7c/9a3b7c8b8c8b8c8b8c8b8c8b8c8b8c8b.jpg" alt="Christian Relationships">
+                  <h4>Building God-Honoring Relationships</h4>
+                  <p>Relationships are at the heart of the Christian life. This teaching explores how to build and maintain healthy, God-honoring relationships with family, friends, and fellow believers.</p>
+                  <p>We'll cover:</p>
+                  <ul>
+                    <li>Biblical principles for healthy relationships</li>
+                    <li>Communication skills grounded in Ephesians 4:29</li>
+                    <li>Setting boundaries with wisdom and love</li>
+                    <li>Forgiveness and reconciliation according to Scripture</li>
+                    <li>Dating and marriage from a biblical perspective</li>
+                  </ul>
+                  <p>"Above all, love each other deeply, because love covers over a multitude of sins." (1 Peter 4:8). The Bible gives us the ultimate example of relationship through the Trinity and Christ's relationship with the Church.</p>
+                  <p>Recommended resources: "The Five Love Languages" by Gary Chapman, "Boundaries" by Cloud and Townsend</p>`
+      },
+      {
+        id: 6,
+        title: "Faith in Practice",
+        description: "Applying your faith to everyday life situations and challenges.",
+        image: "https://i.pinimg.com/736x/8c/9b/7c/8c9b7c8b8c8b8c8b8c8b8c8b8c8b8c8b.jpg",
+        content: `<img src="https://i.pinimg.com/736x/8c/9b/7c/8c9b7c8b8c8b8c8b8c8b8c8b8c8b8c8b.jpg" alt="Faith in Practice">
+                  <h4>Living Out Your Faith Daily</h4>
+                  <p>True faith is not just something we believe but something we live out every day. This teaching explores practical ways to integrate your faith into all areas of life.</p>
+                  <p>Practical applications:</p>
+                  <ul>
+                    <li>Faith in the workplace: being salt and light</li>
+                    <li>Parenting with biblical values</li>
+                    <li>Financial stewardship from a biblical perspective</li>
+                    <li>Engaging with culture as a Christian</li>
+                    <li>Sharing your faith naturally with others</li>
+                  </ul>
+                  <p>"In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven." (Matthew 5:16). The book of James emphasizes that faith without works is dead (James 2:14-26).</p>
+                  <p>Recommended resources: "Everyday Theology" by Kevin Vanhoozer, "The Practice of the Presence of God" by Brother Lawrence</p>`
+      }
+    ];
+
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+      } else {
+        nav.style.boxShadow = '0 3px 15px rgba(0,0,0,0.08)';
+      }
+    });
+    
+    // Set active navigation link
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (currentPage === linkPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('nav-menu').classList.remove('show');
+      });
+    });
+    
+    // Scripture rotation
+    const scriptures = [
+      {
+        text: "Trust in the LORD with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+        ref: "Proverbs 3:5-6 (NIV)"
+      },
+      {
+        text: "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.",
+        ref: "Jeremiah 29:11 (NIV)"
+      },
+      {
+        text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+        ref: "Matthew 6:33 (NIV)"
+      },
+      {
+        text: "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!",
+        ref: "2 Corinthians 5:17 (NIV)"
+      },
+      {
+        text: "I can do all this through him who gives me strength.",
+        ref: "Philippians 4:13 (NIV)"
+      },
+      {
+        text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+        ref: "Romans 8:28 (NIV)"
+      },
+      {
+        text: "The LORD is my shepherd, I lack nothing.",
+        ref: "Psalm 23:1 (NIV)"
+      },
+      {
+        text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the LORD your God will be with you wherever you go.",
+        ref: "Joshua 1:9 (NIV)"
+      },
+      {
+        text: "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control. Against such things there is no law.",
+        ref: "Galatians 5:22-23 (NIV)"
+      },
+      {
+        text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+        ref: "John 3:16 (NIV)"
+      },
+      {
+        text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+        ref: "Philippians 4:6 (NIV)"
+      },
+      {
+        text: "The LORD is close to the brokenhearted and saves those who are crushed in spirit.",
+        ref: "Psalm 34:18 (NIV)"
+      },
+      {
+        text: "But those who hope in the LORD will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+        ref: "Isaiah 40:31 (NIV)"
+      },
+      {
+        text: "Your word is a lamp for my feet, a light on my path.",
+        ref: "Psalm 119:105 (NIV)"
+      },
+      {
+        text: "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
+        ref: "1 Corinthians 13:4 (NIV)"
+      },
+      {
+        text: "Come to me, all you who are weary and burdened, and I will give you rest.",
+        ref: "Matthew 11:28 (NIV)"
+      },
+      {
+        text: "Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus.",
+        ref: "1 Thessalonians 5:16-18 (NIV)"
+      },
+      {
+        text: "The name of the LORD is a fortified tower; the righteous run to it and are safe.",
+        ref: "Proverbs 18:10 (NIV)"
+      },
+      {
+        text: "But the LORD said to Samuel, 'Do not consider his appearance or his height, for I have rejected him. The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.'",
+        ref: "1 Samuel 16:7 (NIV)"
+      },
+      {
+        text: "For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.",
+        ref: "Romans 6:23 (NIV)"
+      }
+    ];
+    
+    // Daily Bible Verse (rotates through scriptures array)
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+    const scriptureIndex = dayOfYear % scriptures.length;
+    
+    document.getElementById('dailyScripture').textContent = `"${scriptures[scriptureIndex].text}"`;
+    document.getElementById('scriptureReference').textContent = scriptures[scriptureIndex].ref;
+    
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('active');
+      } else {
+        scrollToTopBtn.classList.remove('active');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
